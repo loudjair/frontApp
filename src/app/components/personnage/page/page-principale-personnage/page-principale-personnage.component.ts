@@ -50,7 +50,7 @@ export class PagePrincipalePersonnageComponent implements OnInit{
   }
 
   getImage(sexe?:string):string{
-    let src:string = "../../../../../assets/images/";
+    let src:string = "assets/images/";
     return sexe == 'F' ? src+'woman.jpg' : src+'man.jpg';
   }
 

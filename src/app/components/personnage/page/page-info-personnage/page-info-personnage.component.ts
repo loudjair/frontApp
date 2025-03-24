@@ -57,7 +57,7 @@ export class PageInfoPersonnageComponent implements OnInit{
     return sexe == 'F' ? 'woman' : 'man';
   }
   image(sexe?:string):string{
-    let src:string = "../../../../../assets/images/";
+    let src:string = "assets/images/";
     return sexe == 'F' ? src+'woman.jpg' : src+'man.jpg';
   }
   retour():void{

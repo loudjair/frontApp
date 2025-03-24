@@ -53,7 +53,7 @@ export class GestionPersonnageComponent implements OnInit{
     this.personnage$ = this.service.show(personnageId);
   }
   image(sexe?:string):string{
-    let src:string = "../../../../../assets/images/";
+    let src:string = "assets/images/";
     return sexe == 'F' ? src+'woman.jpg' : src+'man.jpg';
   }
   activerOnglet(onglet:string):void{

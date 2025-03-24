@@ -22,7 +22,7 @@
 <div class="container" *ngIf="theme$|async as theme">
     <div class="container-img">
         <h2 class="header-testament">Que dit la Bible dans <br>l'ancien testament ?</h2>
-        <img src="../../../../../assets/images/bible.jpg" alt="bible" class="slide-img img-testament">
+        <img src="assets/images/bible.jpg" alt="bible" class="slide-img img-testament">
     </div>
     <div class="sub-container">
         <div class="tab" *ngIf="(theme.livres|testament:'ancien').length > 0">
@@ -57,7 +57,7 @@
 <div  class="container" *ngIf="theme$|async as theme">
     <div class="container-img">
         <h2 class="header-testament">Que dit la Bible dans <br>le nouveau testament ?</h2>
-        <img src="../../../../../assets/images/bible.jpg" alt="bible" class="slide-img img-testament">
+        <img src="assets/images/bible.jpg" alt="bible" class="slide-img img-testament">
     </div>
     <div class="sub-container">
         <div class="tab" *ngIf="(theme.livres|testament:'nouveau').length > 0">

@@ -16,6 +16,6 @@ export class AccueilThematiqueComponent implements OnInit{
   }
   /*Retourne dans un premier temps une image par défaut*/
   image(url:string):string{
-    return "../../../../../assets/images/croix.jpg";
+    return "assets/images/croix.jpg";
   }
 }
