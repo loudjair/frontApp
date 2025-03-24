@@ -1,0 +1,116 @@
+<div *ngIf="personnage$ | async as personnage" class="chemin">
+    <span *ngFor="let parametre of parametres;index as i">
+        <a [routerLink]="['/',parametre.path]" *ngIf="i==0;else elseBlock">{{parametre.path}}</a>
+        <ng-template #elseBlock>
+            {{parametre.path|chemin:personnage.nom}}
+        </ng-template>
+    </span>
+    <br>
+    <button (click)="retour()" class="btn-retour">retour</button>
+</div>
+<div class="container" *ngIf="personnage$ |async as personnage">
+    <div class="sub-container container-img">
+        <div class="card">
+            <img [src]="image(personnage.sexe)" [alt]="personnage.nom" class="avatar">
+            <h2>{{personnage.nom}}</h2>
+        </div>
+        <h3>Informations:</h3>
+        <ul>
+            <li>
+                {{personnage.naissance|evenement:'naissance':'date'}}
+            </li>
+            <li>
+                {{personnage.naissance|evenement:'naissance':'lieu'}}
+            </li>
+            <li>
+                {{personnage.deces|evenement:'deces':'date'}} 
+            </li>
+            <li>
+                {{personnage.deces|evenement:'deces':'lieu'}}
+            </li>
+            <li>{{personnage.sexe|sexe}}</li>
+        </ul>
+        <h3>Description:</h3>
+        <p>
+            {{personnage.description}}
+        </p>
+    </div>
+    <div class="sub-container container-config">
+        <div class="tab">
+            <button [ngClass]="tablinksClasses.generale" (click)="activerOnglet('generale')">Générale</button>
+            <button [ngClass]="tablinksClasses.entourage" (click)="activerOnglet('entourage')">Entourage</button>
+            <button [ngClass]="tablinksClasses.role" (click)="activerOnglet('role')">Role</button>
+        </div>
+        <div [ngClass]="classes.generale">
+            <app-form-ajouter-modifier-personnage
+                [typeAction]="'update'" 
+                [updatePersonnage]="personnage"
+                (updateEvent)="update($event)"
+            >
+            </app-form-ajouter-modifier-personnage>
+        </div>
+        <div [ngClass]="classes.entourage">
+            <app-ajout-modif-relation
+                *ngIf="'store'==typeActionRelation"
+                [typeAction]="'store'"
+                [personnageId]="personnage.id"
+                (storeEvent)="storeRelation($event)"
+            >
+            </app-ajout-modif-relation>
+            <app-ajout-modif-relation
+                *ngIf="'update'==typeActionRelation" 
+                [typeAction]="'update'"
+                [updateRelation]="relation"
+                [personnageId]="personnage.id"
+                (updateEvent)="updatedRelation($event)"
+            >
+            </app-ajout-modif-relation>
+        
+            <button 
+                *ngIf="'update'==typeActionRelation" 
+                (click)="typeActionRelation = 'store'"
+                class="btnAjouter"
+            >
+                Ajouter une relation
+            </button>
+            <app-tab-relation
+            (updateEvent)="updateRelation($event)"
+            [entourages]="personnage.relations"
+            [newRelation]="newRelation"
+            [updatedRelation]="relationUpdated"
+            >
+            </app-tab-relation>
+        </div>
+        <div [ngClass]="classes.role
+        ">
+            <app-form-ajouter-modifier-personnage-role
+            *ngIf="'store' == typeActionPersoRole"
+            [typeAction]="'store'"
+            [personnage_id]="personnage.id"
+            (storeEvent)="storeRole($event)"
+            >
+            </app-form-ajouter-modifier-personnage-role>
+            <app-form-ajouter-modifier-personnage-role
+            *ngIf="'update'==typeActionPersoRole" 
+            [typeAction]="'update'" 
+            [updatePersonnageRole]="role"
+            [personnage_id]="personnage.id"
+            (updateEvent)="updatedRole($event)"
+            >
+            </app-form-ajouter-modifier-personnage-role>
+            <button 
+            *ngIf="'update'==typeActionPersoRole" 
+            (click)="typeActionPersoRole = 'store'"
+            class="btnAjouter">
+                Ajouter un role
+            </button>
+            <app-tab-personnage-role 
+            (updateEvent)="updateRole($event)"
+            [roles]="personnage.roles"
+            [updatedRole]="updatedrole"
+            [newRole]="storedRole">
+            </app-tab-personnage-role>
+        </div>
+    </div>
+
+</div>

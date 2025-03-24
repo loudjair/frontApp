@@ -1,0 +1,108 @@
+header *{
+    text-align: center;
+}
+
+.index-container{
+    display: flex;
+    flex-direction: column;
+}
+
+.container-img{
+    display: flex;
+}
+
+.container-link{
+    text-align: center;
+}
+
+.sub-container-img{
+    width: 33%;
+    flex-grow: 1;
+    height: 20em;
+    opacity: 0;
+    animation-duration:1s;
+    animation-fill-mode: forwards;
+    width: fit-content;
+    border:1px solid black;
+}
+
+.sub-container-img h2{
+    text-align: center;
+}
+
+.img-index{
+    width: 100%;
+    height:80%;
+    object-fit: cover;
+}
+
+#img1{
+    animation-delay: 1s;
+    animation-name: anim-img1;
+    border-right: 1px solid gainsboro;
+}
+
+#img2{
+    animation-delay: 3s;
+    animation-name: anim-img2;
+    border-right: 1px solid gainsboro;
+}
+#img3{
+    animation-delay: 4s;
+    animation-name: anim-img3;
+}
+
+@keyframes anim-img1{
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+@keyframes anim-img2{
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+            
+@keyframes anim-img3{
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+.link{
+    display: inline-block;
+    margin:0.5em;
+    width: fit-content;
+    text-decoration: none;
+    padding:20px 25px;
+    background-color: gainsboro;
+    border-radius: 1px;
+    font-size: large;
+    transition: background-color 0.3s ease;
+    color:black;
+}
+
+.link:hover{
+    background-color: rgb(249, 232, 232);
+    color:black;
+}
+
+.link img{
+    display: inline-block;
+    transition: transform 0.2s;
+    height: 1em;
+    vertical-align:text-top;
+    margin-left:11px;
+}
+
+.link:hover img{
+    transform: translate(5px,0px);
+}

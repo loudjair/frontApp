@@ -1,0 +1,27 @@
+<table>
+    <thead>
+        <th>role</th>
+        <th>Passage biblique</th>
+        <th>description</th>
+        <th>Date d'insertion</th>
+        <th>Dernière modification</th>
+        <th>action</th>
+    </thead>
+    <tbody>
+        <tr *ngFor="let role of roles">
+            <td>{{role.role}}</td>
+            <td>
+                {{role.pivot?.livre}},
+                chapitre:{{role.pivot?.chapitre}},
+                verset:{{role.pivot?.versets?.debut}} à {{role.pivot?.versets?.fin}}
+            </td>
+            <td>{{role.pivot?.description}}</td>
+            <td>{{role.pivot?.created_at | date}}</td>
+            <td>{{role.pivot?.updated_at | date}}</td>
+            <td>
+                <button (click)="destroy(role.pivot)" *ngIf="role.pivot">Supprimer</button>
+                <button (click)="update(role.pivot)" *ngIf="role.pivot">Modifier</button>
+            </td>
+        </tr>
+    </tbody>
+</table>

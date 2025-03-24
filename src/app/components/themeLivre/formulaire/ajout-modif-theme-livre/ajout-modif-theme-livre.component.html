@@ -1,0 +1,22 @@
+<h1 *ngIf="'store' == typeAction">Ajouter un passage biblique:</h1>
+<h1 *ngIf="'update' == typeAction">Modifier un passage biblique:</h1>
+<form [formGroup]="themeLivreForm" (ngSubmit)="action()">
+    <label>Livre</label>
+    <select formControlName="livre_id">
+        <option [value]="livre.id" *ngFor="let livre of livres$ |async">
+            {{livre.titre}}
+        </option>
+    </select>
+    <label>Chapitre:</label>
+    <input type="number" formControlName="chapitre" id="chapitre">
+    <div formGroupName="versets" class="versets">
+        <label for="debut">Verset début:</label>
+        <input type="number" formControlName="debut" id="debut">
+        <label for="fin">Verset fin:</label>
+        <input type="number" formControlName="fin" id="fin">
+    </div>
+    <label>Explications</label>
+    <textarea formControlName="explications" id="explications" placeholder="explications">
+    </textarea>
+    <button>{{typeAction}}</button>
+</form>

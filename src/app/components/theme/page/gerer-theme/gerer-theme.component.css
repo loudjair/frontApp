@@ -1,0 +1,63 @@
+.btn-retour{
+    margin:1em;
+}
+.header-page{
+    text-align: center;
+    text-decoration: underline;
+}
+.container{
+    display: flex;
+    justify-content: center;
+}
+.sub_container{
+    margin:0 1em;
+}
+.container-img{
+    display: flex;
+    width: 30%;
+    justify-content: center;
+}
+.avatar{
+    width: 100%;
+    object-fit: cover;
+}
+.card h3{
+    text-align: center;
+}
+.tab {
+    overflow: hidden;
+    border: 1px solid #ccc;
+    background-color: #f1f1f1;
+}
+.tab button{
+    float: left;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 14px 16px;
+    transition: 0.3s;
+    font-size: 17px;
+}
+
+.tab button:hover{
+    background-color: #ddd;
+}
+.tablink{
+    background-color: #f1f1f1;
+}
+.tablinkActive{
+    background-color: #ccc;
+}
+.tabcontent{
+    flex-direction: column;
+    border-top: none;
+    overflow-y: auto;
+    border:1px solid gainsboro;
+}
+.displayNone{
+    display:none;
+}
+
+.displayFlex{
+    display:flex;
+}

@@ -1,0 +1,44 @@
+.header-page{
+    text-align: center;
+}
+.container{
+    display: flex;
+    justify-content: center; 
+}
+.sub-container{
+    margin:0 1em;
+}
+.profile{
+    display: flex;
+    height: fit-content;
+}
+.avatar{
+    object-fit: cover;
+}
+.form-container,.profile{
+    padding: 1em;
+    width: fit-content;
+    border:1px solid gainsboro;
+    
+}
+.contenu{
+    width: 100%;
+}
+form{
+    display: flex;
+    flex-direction: column;
+    width: fit-content;
+}
+form *{
+    margin:5px 0;
+    display: block;
+}
+form input{
+    padding: 5px;
+}
+form button{
+    width: fit-content;
+}
+h1{
+    text-decoration: underline;
+}

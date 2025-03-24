@@ -1,0 +1,37 @@
+.btn-retour{
+    margin:1em;
+}
+.header-page{
+    text-align: center;
+}
+.container{
+    display: flex;
+    max-height: 80vh;
+    justify-content: center;
+
+}
+.form-container{
+    width:30%;
+}
+.table-container{
+    border:1px solid gainsboro;
+    overflow-y: auto;
+    display: flex;
+    flex-direction:column;
+}
+
+.table-container form{
+    position:sticky;
+    top:0;
+    padding: 0.5em;
+    background-color: white;
+}
+
+.table-container form input{
+    padding: 5px;
+}
+
+h1,h2{
+    text-decoration: underline;
+    text-align: center;
+}

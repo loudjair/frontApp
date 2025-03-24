@@ -1,0 +1,30 @@
+<div *ngIf="thematique$ | async as thematique" class="chemin">
+    <span *ngFor="let parametre of parametres;index as i">
+        <a [routerLink]="['/',parametre.path]" *ngIf="i==0;else elseBlock">{{parametre.path}}</a>
+        <ng-template #elseBlock>
+            {{parametre.path|chemin:thematique.thematique}}
+        </ng-template>
+    </span>
+    <br>
+    <button (click)="retour()" class="btn-retour">retour</button>
+</div>
+<div class="container" *ngIf="thematique$|async as thematique">
+    <div class="sub-container container-img">
+        <div class="card">
+            <img src="../../../../../assets/images/croix.jpg" alt="croix">
+            <h3>{{thematique.thematique}}</h3>
+        </div>
+        <ul>
+            <li>Themes associés:</li>
+            <li *ngFor="let theme of thematique.themes">{{theme.theme}}</li>
+        </ul>
+    </div>
+    <div class="sub-container container-config">   
+        <app-form-ajouter-modifier-thematique 
+            [_thematique]="thematique"
+            [typeAction]="'update'"
+            (updateEvent)="updatedThematique($event)"
+        >
+        </app-form-ajouter-modifier-thematique>
+    </div>
+</div>

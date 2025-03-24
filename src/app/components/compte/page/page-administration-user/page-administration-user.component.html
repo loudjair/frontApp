@@ -1,0 +1,74 @@
+<div class="msg" *ngIf="msg.length>0">
+    {{msg}}
+    <br>
+    <button (click)="fermer()">Fermer</button>
+</div>
+<h1>Administration des utilisateurs</h1>
+
+<div id="gestion" [ngClass]="gestion_class">
+
+    <button id="quitter" (click)="quitter()">Quitter</button>
+
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Nom</th>
+                <th>Email</th>
+                <th>Role</th>
+                <th>Date d'inscription</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngIf="_utilisateur">
+                <td>{{_utilisateur.id}}</td>
+                <td>{{_utilisateur.nom}}</td>
+                <td>{{_utilisateur.email}}</td>
+                <td>{{_utilisateur.role}}</td>
+                <td>{{_utilisateur.created_at | date}}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <h2>Modification de role:</h2>
+
+    <form [formGroup]="roleForm" (ngSubmit)="modifier()">
+        <label for="role">Rôle :</label>
+        <select formControlName="role" id="role">
+            <option value="superAdmin">superAdmin</option>
+            <option value="administrateur">administrateur</option>
+            <option value="utilisateur">utilisateur</option>
+        </select>
+        <button>modifier</button>
+    </form>
+
+    <h2>Suppression du compte</h2>
+
+    <button (click)="supprimer()">Supprimer</button>
+</div>
+
+
+<table>
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Nom</th>
+            <th>Email</th>
+            <th>Role</th>
+            <th>Date d'inscription</th>
+            <th>Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let user of users$ |async">
+            <td>{{user.id}}</td>
+            <td>{{user.nom}}</td>
+            <td>{{user.email}}</td>
+            <td>{{user.role}}</td>
+            <td>{{user.created_at | date}}</td>
+            <td>
+                <button (click)="gestion(user)">Gérer</button>
+            </td>
+        </tr>
+    </tbody>
+</table>

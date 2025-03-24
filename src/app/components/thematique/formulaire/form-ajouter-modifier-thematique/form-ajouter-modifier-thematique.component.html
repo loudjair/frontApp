@@ -1,0 +1,14 @@
+<h1 *ngIf="'store' == typeAction">Ajouter une thematique</h1>
+<h1 *ngIf="'update' == typeAction">Modifier {{_thematique.thematique}}</h1>
+<form [formGroup]="thematiqueForm" (ngSubmit)="action()">
+    <label>Thematique</label>
+    <input type="text" formControlName="thematique" id="thematique" placeholder="thematique">
+    <label>Description</label>
+    <textarea formControlName="description" id="description" placeholder="description">
+    </textarea>
+    <label>Image</label>
+    <select formControlName="image">
+        <option [value]="image" *ngFor="let image of images">{{image}}</option>
+    </select>
+    <button>{{typeAction}}</button>
+</form>

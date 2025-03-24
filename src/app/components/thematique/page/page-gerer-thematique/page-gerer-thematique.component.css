@@ -1,0 +1,14 @@
+.header-page{
+    text-align: center;
+    text-decoration: underline;
+}
+.container{
+    display: flex;
+    justify-content: center;
+}
+.sub_container{
+    margin:0 1em;
+}
+.btn-retour{
+    margin:1em;
+}

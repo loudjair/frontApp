@@ -1,0 +1,31 @@
+<table class="container-table">
+    <thead>
+        <th>Personnage</th>
+        <th>Relation</th>
+        <th>Passage biblique</th>
+        <th>Description</th>
+        <th>Action</th>
+    </thead>
+    <tbody>
+        <tr *ngFor="let entourage of entourages">
+            <td>
+                {{entourage.nom}}
+            </td>
+            <td>
+                {{entourage.pivot?.relation}}
+            </td>
+            <td>
+                {{entourage.pivot?.livre}},
+                Chapitre {{entourage.pivot?.chapitre}},
+                Versets {{entourage.pivot?.versets?.debut}} à {{entourage.pivot?.versets?.fin}}
+            </td>
+            <td>
+                {{entourage.pivot?.description}}
+            </td>
+            <td>
+                <button (click)="update(entourage.pivot)">Modifier</button>
+                <button (click)="destroy(entourage.pivot?.id)">Supprimer</button>
+            </td>
+        </tr>
+    </tbody>
+</table>

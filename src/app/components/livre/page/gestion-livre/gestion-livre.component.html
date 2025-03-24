@@ -1,0 +1,30 @@
+<div *ngIf="livre$ | async as livre" class="chemin">
+    <span *ngFor="let parametre of parametres;index as i">
+        <a [routerLink]="['/',parametre.path]" *ngIf="i==0;else elseBlock">{{parametre.path}}</a>
+        <ng-template #elseBlock>
+            {{parametre.path|chemin:livre.titre}}
+        </ng-template>
+    </span>
+    <br>
+    <button (click)="retour()" class="btn-retour">retour</button>
+</div>
+<h1 class="header-page" *ngIf="livre$ | async as livre">Gestion du livre de {{livre.titre}}</h1>
+<div class="container" *ngIf="livre$ | async as livre">
+    <div class="sub-container container-img">
+        <div class="card">
+            <img src="../../../../../assets/images/croix.jpg" alt="croix" class="avatar">
+            <h3>{{livre.titre}}</h3>
+        </div>
+        <ul>
+            <li>{{livre.titre}}</li>
+            <li>{{livre.testament}} testament</li>
+        </ul>
+    </div>
+    <div class="sub-container container-config">
+        <app-form-ajouter-modifier-livre 
+        [typeAction]="'update'" 
+        [updateLivre]="livre"
+        (updateEvent)="update($event)">
+        </app-form-ajouter-modifier-livre>
+    </div>
+</div>

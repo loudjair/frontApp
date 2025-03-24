@@ -1,0 +1,25 @@
+<h1 *ngIf="typeAction=='store'">Ajouter un livre</h1>
+<h1 *ngIf="typeAction=='update'">Modifier {{updateLivre.titre}}</h1>
+<form [formGroup]="livreForm" (ngSubmit)="action()">
+    <label>Livre</label>
+    <input type="text" formControlName="titre" id="titre" placeholder="titre">
+    <label for="testament">Testament:</label>
+    <select formControlName="testament" id="testament">
+        <option value="ancien">Ancien</option>
+        <option value="nouveau">Nouveau</option>
+    </select>
+    <label>Aprocryphe:</label>
+    <select formControlName="apocryphe" id="autre">
+        <option value="?">?</option>
+        <option value="vrai">Vrai</option>
+        <option value="faux">Faux</option>
+    </select>
+    <label for="chapitre_total">Chapitre total:</label>
+    <input type="number" formControlName="chapitre_total" id="chapitre_total">
+    <label for="verset_total">Verset total:</label>
+    <input type="number" formControlName="verset_total" id="verset_total">
+    <label>Description</label>
+    <textarea formControlName="description" id="description" placeholder="description">
+    </textarea>
+    <button>{{typeAction}}</button>
+</form>

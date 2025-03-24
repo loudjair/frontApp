@@ -1,0 +1,19 @@
+<button (click)="retour()" class="btn-retour">retour</button>
+<h1 class="header-page">Gestion des thèmes</h1>
+<div class="container">
+    <div class="sub_container">
+        <!--Formulaire d'insertion-->
+        <app-ajout-modif-theme 
+        [typeAction]="'store'"
+        (storeEvent)="store($event)"
+        >
+        </app-ajout-modif-theme>
+    </div>
+    <div class="sub_container">
+        <!-- Tableau thematique -->
+        <app-tab-theme
+        [newTheme]="newTheme"
+        >
+        </app-tab-theme>
+    </div>
+</div>

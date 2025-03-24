@@ -1,0 +1,114 @@
+<header>
+    <h1>Personnages</h1>
+</header>
+<!--Ancien testatement-->
+<div class="conteneur">
+    <div class="container">
+        <div class="sub-container">
+            <div class="banniere">
+                <div class="filtre-banniere">
+                    <h1 class="titre">Ancien<br>Testament</h1>
+                </div>
+                <div class="sous-banniere">
+                    <img src="../../../../../assets/images/jardin d'eden.jpg" alt="jardin">
+                    <img src="../../../../../assets/images/arche_de_noe.jpg" alt="noe">
+                    <img src="../../../../../assets/images/moise.jpg" alt="moise">
+                </div>
+                <div class="sous-banniere">
+                    <img src="../../../../../assets/images/david.jpg" alt="david">
+                    <img src="../../../../../assets/images/daniel.jpg" alt="daniel">
+                    <img  class="good-position" src="../../../../../assets/images/Isaiah.jpg" alt="Isaiah">
+                </div>
+            </div>
+        </div>
+        <div class="sub-container personnages-container" >
+            <form class="config1" [formGroup]="oldTestamentPersoForm" (ngSubmit)="action('ancien')">
+                <label for="">Personnage:</label>
+                <input list="perso_ancien_test" formControlName="nom" placeholder="Nom">
+                <datalist id="perso_ancien_test">
+                    <option *ngFor="let personnage of data$ |async |personnage:'ancien'" [value]="personnage.nom">
+                </datalist>
+
+                <label for="sexe">Sexe:</label>
+                <select formControlName="sexe" id="sexe">
+                    <option value=""></option>
+                    <option value="F">Femme</option>
+                    <option value="M">Homme</option>
+                </select>
+
+                <label for="role">Roles:</label>
+                <select formControlName="role" id="role">
+                    <option value=""></option>
+                    <option [value]="role.role" *ngFor="let role of roles$ |async">{{role.role}}</option>
+                </select>
+            <button>Rechercher</button>
+            </form>
+            <div class="personnages config1">
+                <div class="personnage" *ngFor="let personnage of personnages$ |async |personnage:'ancien':filtreOldPerso">
+                    <img [src]="getImage(personnage?.sexe)" [alt]="getImage(personnage?.sexe)" class="avatar">
+                    <a [routerLink]="['/personnages',personnage.id]">{{personnage.nom}}</a>
+                </div>
+                <div
+                 class="personnage" *ngFor="let personnage of personnages$ |async|personnage:'deux':filtreOldPerso">
+                    <img [src]="getImage(personnage?.sexe)" [alt]="getImage(personnage?.sexe)" class="avatar">
+                    <a [routerLink]="['/personnages',personnage.id]">{{personnage.nom}}</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Nouveau testament-->
+<div class="conteneur">
+    <div class="container">
+        <div class="sub-container">
+            <div class="banniere">
+                <div class="filtre-banniere">
+                    <h1 class="titre">Nouveau<br>Testament</h1>
+                </div>
+                <div class="sous-banniere">
+                    <img src="../../../../../assets/images/rois mages.jpg" alt="rois">
+                    <img src="../../../../../assets/images/baby_jesus.jpg" alt="baby_jesus">
+                    <img src="../../../../../assets/images/jean_le_baptiste.jpg" alt="jean_le_baptiste">
+                </div>
+                <div class="sous-banniere">
+                    <img src="../../../../../assets/images/jesus.jpg" alt="jesus">
+                    <img src="../../../../../assets/images/sainte_cene.jpg" alt="sainte_cene">
+                    <img  class="good-position" src="../../../../../assets/images/le retour.jpg" alt="le retour">
+                </div>
+            </div>  
+        </div>
+        <div class="sub-container personnages-container">
+            <form class="config1" [formGroup]="newTestamentPersoForm" (ngSubmit)="action('nouveau')">
+                <label for="">Personnage:</label>
+                <input list="perso_nouv_test" formControlName="nom" placeholder="Nom">
+                <datalist id="perso_nouv_test">
+                    <option *ngFor="let personnage of data$ |async |personnage:'nouveau' " [value]="personnage.nom">
+                </datalist>
+
+                <label for="sexe">Sexe:</label>
+                <select formControlName="sexe" id="sexe">
+                    <option value=""></option>
+                    <option value="F">Femme</option>
+                    <option value="M">Homme</option>
+                </select>
+
+                <label for="role">Roles:</label>
+                <select formControlName="role" id="role">
+                    <option value=""></option>
+                    <option [value]="role.role" *ngFor="let role of roles$ |async">{{role.role}}</option>
+                </select>
+                <button>Rechercher</button>
+            </form>
+            <div class="personnages config1">
+                <div class="personnage" *ngFor="let personnage of personnages$ |async|personnage:'nouveau':filtreNewPerso">
+                    <img [src]="getImage(personnage?.sexe)" [alt]="getImage(personnage?.sexe)" class="avatar">
+                    <a [routerLink]="['/personnages',personnage.id]">{{personnage.nom}}</a>
+                </div>
+                <div class="personnage" *ngFor="let personnage of personnages$ |async|personnage:'deux':filtreNewPerso">
+                    <img [src]="getImage(personnage?.sexe)" [alt]="getImage(personnage?.sexe)" class="avatar">
+                    <a [routerLink]="['/personnages',personnage.id]">{{personnage.nom}}</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

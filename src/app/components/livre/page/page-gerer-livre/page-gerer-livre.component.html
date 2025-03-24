@@ -1,0 +1,22 @@
+<div class="msg" *ngIf="msg.length>0">
+    {{msg}}
+    <br>
+    <button (click)="fermer()">Fermer</button>
+</div>
+<button (click)="retour()" class="btn-retour">Retour</button>
+<h1 class="header-page">Gestion des livres</h1>
+<div class="container">
+    <div class="sub-container">
+        <app-form-ajouter-modifier-livre 
+        [typeAction]="'store'" 
+        (storeEvent)="store($event)"
+        >
+        </app-form-ajouter-modifier-livre>
+    </div>
+    <div class="sub-container">
+        <app-tab-livre
+        [newLivre]="storeLivre"
+        >
+        </app-tab-livre>
+    </div>
+</div>

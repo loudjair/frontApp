@@ -1,0 +1,30 @@
+<div class="container-table">
+    <table>
+        <thead>
+            <th>Thematique</th>
+            <th>Description</th>
+            <th>Image</th>
+            <th>created at</th>
+            <th>update at</th>
+            <th>Action</th>
+        </thead>
+        <tbody>
+            <tr *ngFor="let thematique of thematiques$ | async">
+                <td>{{thematique.thematique}}</td>
+                <td>
+                    <details>
+                        <summary>Détails</summary>
+                        {{thematique.description}}
+                    </details>
+                </td>
+                <td>{{thematique.image}}</td>
+                <td>{{thematique.created_at | date}}</td>
+                <td>{{thematique.updated_at | date}}</td>
+                <td>
+                    <a [routerLink]="[thematique.id]" style="color:blue">Gérer</a>
+                    <button (click)="destroy(thematique.id)">Supprimer</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

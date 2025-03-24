@@ -1,0 +1,40 @@
+<div class="msg" *ngIf="msg.length>0">
+    {{msg}}
+    <br>
+    <button (click)="fermer()">Fermer</button>
+</div>
+<div class="container">
+    <div class="sub-container">
+        <img src="../../../../../assets/images/connexion_inscription.jpg" alt="connexion_inscription" class="image">
+    </div>
+    <div class="sub-container">
+        <div class="form-container">
+            <div class="contenu">
+                <h1>Inscription</h1>
+                <p>
+                    Vous souhaitez participer à ce projet ? <u><b>Créez-vous un compte</b></u>:
+                </p>
+                <form [formGroup]="inscriptionForm" (ngSubmit)="inscription()">
+                    <input type="text" placeholder="Nom" formControlName="nom">
+                    <input type="text" formControlName="email" placeholder="email">
+                    <label for="password">Password:</label>
+                    <input type="password" formControlName="password">
+                    <button>Inscription</button>
+                </form>
+            </div>
+            <div class="contenu connexion">
+                <h1>Connexion</h1>
+                <p>
+                    Vous avez déjà un compte ? <u><b>Connectez-vous</b></u>:
+                </p>
+                <form [formGroup]="connexionForm" (ngSubmit)="connexion()">
+                    <input type="text" formControlName="email" id="email" placeholder="email">
+                    <label for="password">Mot de passe:</label>
+                    <input type="password" formControlName="password" id="password">
+                    <button>Connexion</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+

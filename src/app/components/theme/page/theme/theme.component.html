@@ -1,0 +1,85 @@
+<div class="chemin" *ngIf="theme$ | async as theme">
+    <span *ngFor="let parametre of parametres;index as i">
+        <a [routerLink]="['/',parametre.path]" *ngIf="i==0;else elseBlock">{{parametre.path}}</a>
+        <ng-template #elseBlock>
+            {{parametre.path|chemin:theme.theme}}
+        </ng-template>
+    </span>
+    <br>
+    <button (click)="retour()" class="btn-retour">retour</button>
+</div>
+<div class="container" *ngIf="theme$|async as theme">
+    <img [src]="image(theme.image)" alt="theme" class="slide-img img-theme">
+    <div class="sub-container theme">
+        <div class="container-theme">
+            <h1>{{theme.theme}}</h1>
+            <p>
+                {{theme.description}}
+            </p>
+        </div>
+    </div>
+</div>
+<div class="container" *ngIf="theme$|async as theme">
+    <div class="container-img">
+        <h2 class="header-testament">Que dit la Bible dans <br>l'ancien testament ?</h2>
+        <img src="../../../../../assets/images/bible.jpg" alt="bible" class="slide-img img-testament">
+    </div>
+    <div class="sub-container">
+        <div class="tab" *ngIf="(theme.livres|testament:'ancien').length > 0">
+            <button *ngFor="let livre of theme.livres|testament:'ancien'" class="tablinks" (click)="activerOnglet(livre)">
+                {{livre.titre}}
+            </button>
+        </div>
+        <div [ngClass]="classes[livre.titre|nomLivre]" *ngFor="let livre of theme.livres|testament:'ancien'" >
+            <div class="passage" *ngFor="let passage of theme.passages | livre:livre.titre">
+                <h2>
+                    Chapitre {{passage.pivot?.chapitre}},
+                    Verset {{passage.pivot?.versets?.debut}} à {{passage.pivot?.versets?.fin}}
+                </h2>
+                <h3>Commentaire:</h3>
+                <p>
+                    {{passage.pivot?.explications}}
+                </p>
+                <cite>
+                    Passage biblique lue/relevée de la traduction 
+                    <b>{{passage.pivot?.traduction}}</b> 
+                    et Edition: <b>{{passage.pivot?.edition}}</b> 
+                </cite>
+            </div>
+        </div>
+        <p *ngIf="(theme.livres|testament:'ancien').length < 1" class="msg-ajout-passage">
+            Aucun passage biblique relevé , pour en ajouter, cliquez ci-dessous:
+            <br>
+            <a [routerLink]="['/compte/gestion/themes',theme.id]">Ajouter</a>
+        </p>
+    </div>
+</div>
+<div  class="container" *ngIf="theme$|async as theme">
+    <div class="container-img">
+        <h2 class="header-testament">Que dit la Bible dans <br>le nouveau testament ?</h2>
+        <img src="../../../../../assets/images/bible.jpg" alt="bible" class="slide-img img-testament">
+    </div>
+    <div class="sub-container">
+        <div class="tab" *ngIf="(theme.livres|testament:'nouveau').length > 0">
+            <button *ngFor="let livre of theme.livres|testament:'nouveau'" class="tablinks" (click)="activerOnglet(livre)">
+                {{livre.titre}}
+            </button>
+        </div>
+        <div  [ngClass]="classes[livre.titre|nomLivre]" *ngFor="let livre of theme.livres|testament:'nouveau'" >
+            <div class="passage" *ngFor="let passage of theme.passages | livre:livre.titre">
+                <h2>
+                    Chapitre {{passage.pivot?.chapitre}},
+                    Verset {{passage.pivot?.versets?.debut}} à {{passage.pivot?.versets?.fin}}
+                </h2>
+                <p>
+                    {{passage.pivot?.explications}}
+                </p>
+            </div>
+        </div>
+        <p *ngIf="(theme.livres|testament:'nouveau').length < 1" class="msg-ajout-passage">
+            Aucun passage biblique relevé , pour en ajouter, cliquez ci-dessous:
+            <br>
+            <a [routerLink]="['/compte/gestion/themes',theme.id]">Ajouter</a>
+        </p>
+    </div>
+</div>

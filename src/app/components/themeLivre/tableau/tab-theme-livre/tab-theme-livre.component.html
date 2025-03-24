@@ -1,0 +1,32 @@
+<div class="container-table">
+    <table>
+        <thead>
+            <th>Passages bibliques</th>
+            <th>explications</th>
+            <th>Date d'insertion</th>
+            <th>Date de mise à jour</th>
+            <th>action</th>
+        </thead>
+        <tbody>
+            <tr *ngFor="let passage of passages">
+                <td>
+                    {{passage.titre}},
+                    Chapitre {{passage.pivot?.chapitre}},
+                    Verset {{passage.pivot?.versets?.debut}} à {{passage.pivot?.versets?.fin}}
+                </td>
+                <td>
+                    <details>
+                        <summary>details</summary>
+                        <span>{{passage.pivot?.explications}}</span>
+                    </details>
+                </td>
+                <td>{{passage.pivot?.created_at | date}}</td>
+                <td>{{passage.pivot?.updated_at | date}}</td>
+                <td>
+                    <button (click)="update(passage.pivot)" *ngIf="passage.pivot">Modifier</button>
+                    <button (click)="destroy(passage.pivot.id)" *ngIf="passage.pivot">Supprimer</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

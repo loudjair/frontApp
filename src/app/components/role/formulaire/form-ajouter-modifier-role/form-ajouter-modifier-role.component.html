@@ -1,0 +1,11 @@
+<h1 *ngIf="'store' == typeAction">Ajouter un role:</h1>
+<h1 *ngIf="'update' == typeAction">Modifier {{updateRole.role}}:</h1>
+
+<form [formGroup]="roleForm" (ngSubmit)="action()">
+    <label>Role</label>
+    <input type="text" formControlName="role" id="role" placeholder="role">
+    <label>Description</label>
+    <textarea formControlName="description" id="description" placeholder="description">
+    </textarea>
+    <button>{{typeAction}}</button>
+</form>

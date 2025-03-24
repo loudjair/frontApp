@@ -1,0 +1,18 @@
+<button (click)="retour()" class="btn-retour">retour</button>
+<h1 class="header-page">Gestion des roles</h1>
+<div class="container">
+    <div class="sub-container">
+        <!-- Ajouter un nouveau role -->
+        <app-form-ajouter-modifier-role
+        [typeAction]="'store'"
+        (storeEvent)="store($event)"
+        >
+        </app-form-ajouter-modifier-role>
+    </div>
+    <div class="sub-container">
+        <app-tab-role 
+        [newRole]="newRole"
+        >
+        </app-tab-role>
+    </div>
+</div>

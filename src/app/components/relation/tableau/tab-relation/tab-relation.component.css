@@ -1,0 +1,11 @@
+.container-table{
+    overflow-x: auto;
+}
+table,th,td{
+    border-collapse:collapse;
+    border: 1px solid;
+}
+table{
+    width: 70%;
+    margin: 0 auto;
+}

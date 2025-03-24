@@ -1,0 +1,44 @@
+<div class="msg" *ngIf="msg.length>0">
+    {{msg}}
+    <br>
+    <button (click)="fermer()">Fermer</button>
+</div>
+<h1 class="header-page">Modification de mon compte</h1>
+<div class="container">
+    <div class="sub-container profile">
+        <div class="container-img">
+            <img src="../../../../../assets/images/icons/user.png" alt="user" class="avatar">
+        </div>
+        <ul *ngIf="user">
+            <li>{{user.nom}}</li>
+            <li>{{user.email}}</li>
+            <li>{{user.role}}</li>
+            <li>Membre depuis {{user.created_at | date}}</li>
+            <li>Mise à jour le {{user.updated_at | date}}</li>
+        </ul>
+    </div>
+    <div class="sub-container form-container">
+        <h1>Modifier le nom:</h1>
+        <form [formGroup]="nomForm" (ngSubmit)="modifNom()">
+            <input type="text" placeholder="Nouveau nom" formControlName="nom">
+            <button>Modifier</button>
+        </form>
+        <h1>Modifier l'email:</h1>
+        <form [formGroup]="emailForm" (ngSubmit)="modifEmail()">
+            <input type="text" placeholder="Nouvel email" formControlName="email">
+            <label for="password">Saisir votre mot de passe avant de modifier:</label>
+            <input type="password" formControlName="password" id="password">
+            <button>Modifier</button>
+        </form>
+        <h1>Modifier le mot de passe:</h1>
+        <form [formGroup]="passwordForm" (ngSubmit)="modifPassword()">
+            <label for="old_password">Ancien mot de passe:</label>
+            <input type="password" formControlName="old_password" id="old_password">
+            <label for="new_password">Nouveau mot de passe:</label>
+            <input type="password" formControlName="new_password" id="new_password">
+            <label for="confirm_password">Confirmer le mot de passe:</label>
+            <input type="password" formControlName="confirm_password" id="confirm_password">
+            <button>Modifier</button>
+        </form>
+    </div>
+</div>

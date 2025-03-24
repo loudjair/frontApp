@@ -1,0 +1,32 @@
+<button (click)="retour()" class="btn-retour">retour</button>
+<h1>Gestion des personnages</h1>
+<div class="container">
+    <div class="sub_container form-container">
+        <!-- Ajouter un nouveau personnage -->
+        <app-form-ajouter-modifier-personnage
+        [typeAction]="'store'"
+        (storeEvent)="store($event)"
+        >
+        </app-form-ajouter-modifier-personnage>
+    </div>
+    <div class="sub_container table-container">
+        <form [formGroup]="rechercheForm">
+            <label for="id">Id:</label>
+            <input type="number" formControlName="id" placeholder="Id">
+            <label for="nom">Nom:</label>
+            <input type="text" formControlName="nom" placeholder="nom">
+            <label for="testament">Testament:</label>
+            <select formControlName="testament">
+                <option value="ancien">Ancien</option>
+                <option value="nouveau">Nouveau</option>
+                <option value="deux">Deux</option>
+            </select>
+            <button>Valider</button>
+        </form>
+        <app-tab-personnage 
+        [newPersonnage]="storePersonnage"
+        >
+        </app-tab-personnage>
+    </div>
+</div>
+

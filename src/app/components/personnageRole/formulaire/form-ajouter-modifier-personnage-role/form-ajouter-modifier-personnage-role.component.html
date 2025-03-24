@@ -1,0 +1,24 @@
+<h1 *ngIf="'store' == typeAction">Ajouter un role</h1>
+<h1 *ngIf="'update' == typeAction">Modifier un role</h1>
+<form [formGroup]="personnageRoleForm" (ngSubmit)="action()">
+    <label for="role_id" >Role:</label>
+    <select formControlName="role_id" id="role_id">
+        <option *ngFor="let role of _roles$ | async" [value]="role.id">{{role.role}}</option>
+    </select>
+    <h4>Passage biblique</h4>
+    <label for="livre_id">Livre :</label>
+    <select formControlName="livre_id" id="livre_id">
+        <option *ngFor="let livre of _livres$ |async" [value]="livre.id" >{{livre.titre}}</option>
+    </select>
+    <label for="chapitre">chapitre</label>
+    <input type="number" formControlName="chapitre" id="chapitre">
+    <div formGroupName="versets" class="versets">
+        <label for="debut">Verset Début:</label>
+        <input type="number" formControlName="debut" id="debut">
+        <label for="fin">Verset Fin:</label>
+        <input type="number" formControlName="fin" id="fin">
+    </div>
+    <label>Description</label>
+    <textarea formControlName="description" id="description" placeholder="Description"></textarea>
+    <button>{{typeAction == 'store' ? 'Ajouter':'Modifier'}}</button>
+</form>

@@ -1,0 +1,31 @@
+<div *ngIf="role$ | async as role" class="chemin">
+    <span *ngFor="let parametre of parametres;index as i">
+        <a [routerLink]="['/',parametre.path]" *ngIf="i==0;else elseBlock">{{parametre.path}}</a>
+        <ng-template #elseBlock>
+            {{parametre.path|chemin:role.role}}
+        </ng-template>
+    </span>
+    <br>
+    <button (click)="retour()" class="btn-retour">retour</button>
+</div>
+<h1 class="header-page" *ngIf="role$ |async as role">Gestion du role de {{role.role}}</h1>
+<div class="container" *ngIf="role$ |async as role">
+    <div class="sub-container container-img">
+        <div class="card">
+            <img src="../../../../../assets/images/croix.jpg" alt="croix" class="avatar">
+            <h3>{{role.role}}</h3>
+        </div>
+        <p>
+            {{role.description}}
+        </p>
+    </div>
+    <div class="sub-container container-config">
+        <!-- Modifier un role -->
+        <app-form-ajouter-modifier-role
+        [typeAction]="'update'"
+        [updateRole]="role"
+        (updateEvent)="updatedRole($event)"
+        >
+        </app-form-ajouter-modifier-role>
+    </div>
+</div>

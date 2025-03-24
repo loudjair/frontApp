@@ -1,0 +1,25 @@
+<table>
+    <thead>
+      <th>Testament</th>
+      <th>Identité</th>
+      <th>Sexe</th>
+      <th>Date d'insertion</th>
+      <th>Dernière modification</th>
+      <th>Action</th>
+    </thead>
+    <tbody>
+      <tr *ngFor="let personnage of _personnages$ |async">
+        <td>{{personnage.testament}}</td>
+        <td>
+          {{personnage.nom}}
+        </td>
+        <td>{{personnage.sexe}}</td>
+        <td>{{personnage.created_at | date}}</td>
+        <td>{{personnage.updated_at | date}}</td>
+        <td>
+          <a [routerLink]="[personnage.id]" style="color:blue">Gérer</a>
+          <button (click)="destroy(personnage.id)">Supprimer</button>
+        </td>
+      </tr>
+    </tbody>
+</table>

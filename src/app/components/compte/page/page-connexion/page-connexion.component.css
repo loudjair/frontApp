@@ -1,0 +1,56 @@
+.container{
+    display: flex;
+    height: 90vh;
+}
+.sub-container{
+    width: 50%;
+    align-content: center;
+}
+
+.image{
+    width: 90%;
+    margin: 0 auto;
+    display: block;
+}
+.form-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: fit-content;
+    margin:0 auto;
+    border:1px solid gainsboro;
+    border-radius: 15px;
+    padding: 1em;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    
+}
+.contenu{
+    width: 100%;
+}
+form{
+    display: flex;
+    flex-direction: column;
+    width: fit-content;
+    margin:0 auto;
+}
+form *{
+    margin:5px 0;
+    display: block;
+}
+form input{
+    padding: 5px;
+}
+form button{
+    width: fit-content;
+}
+h1{
+    text-decoration: underline;
+    text-align: center;
+}
+p{
+    text-align: center;
+}
+.connexion{
+    margin-top:1em;
+    border-top:1px solid black;
+}

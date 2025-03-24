@@ -1,0 +1,22 @@
+<nav>
+    <a routerLink="">
+        Accueil
+        <img src="../assets/images/icons/book.png" alt="logo" class="img-logo">
+    </a>    
+
+    <div [ngClass]="classes">
+        <a routerLink="/personnages">Personnages</a>
+        <a routerLink="/thematiques">Thématiques</a>
+    </div>
+    <div class="dropdown">
+        <a routerLink="/compte" id="compte">Compte</a>
+        <div class="dropdown-content" *ngIf="user$ |async as user">
+            <span>{{user.nom}}</span>
+            <span>
+                <button (click)="deconnexion()">Deconnexion</button>
+            </span>
+        </div>
+    </div>
+</nav>
+
+<router-outlet></router-outlet>

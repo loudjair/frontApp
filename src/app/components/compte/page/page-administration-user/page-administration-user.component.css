@@ -1,0 +1,20 @@
+table{
+    width: auto;
+}
+.display-none{
+    display: none;
+}
+
+#gestion{
+    position: fixed;
+    top:0;
+    margin: 10%;
+    background-color: burlywood;
+    z-index: 1;
+}
+
+#quitter{
+    position: absolute;
+    right: 5px;
+    top:5px;     
+}

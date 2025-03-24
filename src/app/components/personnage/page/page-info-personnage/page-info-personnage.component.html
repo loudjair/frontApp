@@ -1,0 +1,163 @@
+<div *ngIf="personnage$ | async as personnage" class="chemin">
+    <span *ngFor="let parametre of parametres;index as i">
+        <a [routerLink]="['/',parametre.path]" *ngIf="i==0;else elseBlock">{{parametre.path}}</a>
+        <ng-template #elseBlock>
+            {{parametre.path|chemin:personnage.nom}}
+        </ng-template>
+    </span>
+    <br>
+    <button (click)="retour()" class="btn-retour">retour</button>
+</div>
+<div class="container" *ngIf="personnage$ | async as personnage">
+    <div class="sub-container img-container">
+        <img [src]="image(personnage.sexe)" [alt]="image(personnage.sexe)" class="img-personnage">
+        <h2>{{personnage.nom}}</h2>
+    </div>
+    <div class="sub-container container-information">
+        <div class="information">
+            <h2 class="header-information">Informations générales:</h2>
+            <ul>
+                <li>
+                    {{personnage.naissance|evenement:'naissance':'date'}}
+                    <br>
+                    {{personnage.naissance|evenement:'naissance':'lieu'}}
+                </li>
+                <li>
+                    {{personnage.deces|evenement:'deces':'date'}} 
+                    <br>
+                    {{personnage.deces|evenement:'deces':'lieu'}}
+                </li>
+                <li>
+                    {{personnage.sexe|sexe}}
+                </li>
+            </ul>
+        </div>
+        <div class="information">
+            <h3 class="header-information">Rôles:</h3>
+            <div>
+                <div class="card" *ngFor="let role of personnage.roles">
+                    <div class="img-card">
+                        <img [src]="role.role | role:5" [alt]="role.role" class="avatar">
+                    </div>
+                    <div class="info-card">
+                        <h4 class="header-information">{{role.role}}:</h4>
+                        <p>
+                            {{role.pivot?.description}}
+                        </p>
+                        <cite>
+                            ({{role.pivot?.livre}},
+                            Chapitre:{{role.pivot?.chapitre}},
+                            Verset:{{role.pivot?.versets?.debut}} à {{role.pivot?.versets?.fin}})
+                        </cite>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="information">
+            <h2 class="header-information">Biographie:</h2>
+            <p>
+                {{personnage.description}}
+            </p>
+        </div>
+        <div class="information">
+            <div class="entourages">
+                <h2 class="header-information">Entourage familliale:</h2>
+                <div>
+                    <div class="card" *ngFor="let entourage of personnage.relations |entourage:'famille'">
+                        <div class="img-card">
+                            <img [src]="image(entourage.sexe)" [alt]="image(entourage.sexe)" class="avatar">
+                        </div>
+                        <div class="info-card">
+                            <div>
+                                <a [routerLink]="['/personnages',entourage.id]">{{entourage.nom}}</a>:
+                                <span class="header-information">
+                                    {{entourage.pivot?.relation}}
+                                </span>
+                            </div>
+                            <p>{{entourage.pivot?.description}}</p>
+                            <cite>
+                                (
+                                    {{entourage.pivot?.livre}},
+                                    Chapitre {{entourage.pivot?.chapitre}},
+                                    Verset {{entourage.pivot?.versets?.debut}} à {{entourage.pivot?.versets?.fin}}
+                                )
+                            </cite>
+                        </div>
+                    </div>                
+                </div>
+                <h2 class="header-information">Entourage amicale:</h2>
+                <div>
+                    <div class="card" *ngFor="let entourage of personnage.relations |entourage:'amitié'">
+                        <div class="img-card">
+                            <img [src]="image(entourage.sexe)" [alt]="image(entourage.sexe)" class="avatar">
+                        </div>
+                        <div class="info-card">
+                            <div>
+                                <a [routerLink]="['/personnages',entourage.id]">{{entourage.nom}}</a>:
+                                <span class="header-information">
+                                    {{entourage.pivot?.relation}}
+                                </span>
+                            </div>
+                            <p>{{entourage.pivot?.description}}</p>
+                            <cite>
+                                (
+                                    {{entourage.pivot?.livre}},
+                                    Chapitre {{entourage.pivot?.chapitre}},
+                                    Verset {{entourage.pivot?.versets?.debut}} à {{entourage.pivot?.versets?.fin}}
+                                )
+                            </cite>
+                        </div>
+                    </div>                
+                </div>
+                <h2 class="header-information">Compagnon de travail:</h2>
+                <div>
+                    <div class="card" *ngFor="let entourage of personnage.relations |entourage:'travail'">
+                        <div class="img-card">
+                            <img [src]="image(entourage.sexe)" [alt]="image(entourage.sexe)" class="avatar">
+                        </div>
+                        <div class="info-card">
+                            <div>
+                                <a [routerLink]="['/personnages',entourage.id]">{{entourage.nom}}</a>:
+                                <span class="header-information">
+                                    {{entourage.pivot?.relation}}
+                                </span>
+                            </div>
+                            <p>{{entourage.pivot?.description}}</p>
+                            <cite>
+                                (
+                                    {{entourage.pivot?.livre}},
+                                    Chapitre {{entourage.pivot?.chapitre}},
+                                    Verset {{entourage.pivot?.versets?.debut}} à {{entourage.pivot?.versets?.fin}}
+                                )
+                            </cite>
+                        </div>
+                    </div>                
+                </div>
+                <h2 class="header-information">Autres entourage:</h2>
+                <div>
+                    <div class="card" *ngFor="let entourage of personnage.relations |entourage:'autre'">
+                        <div class="img-card">
+                            <img [src]="image(entourage.sexe)" [alt]="image(entourage.sexe)" class="avatar">
+                        </div>
+                        <div class="info-card">
+                            <div>
+                                <a [routerLink]="['/personnages',entourage.id]">{{entourage.nom}}</a>:
+                                <span class="header-information">
+                                    {{entourage.pivot?.relation}}
+                                </span>
+                            </div>
+                            <p>{{entourage.pivot?.description}}</p>
+                            <cite>
+                                (
+                                    {{entourage.pivot?.livre}},
+                                    Chapitre {{entourage.pivot?.chapitre}},
+                                    Verset {{entourage.pivot?.versets?.debut}} à {{entourage.pivot?.versets?.fin}}
+                                )
+                            </cite>
+                        </div>
+                    </div>                
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

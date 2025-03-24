@@ -1,0 +1,73 @@
+<div *ngIf="theme$ | async as theme" class="chemin">
+    <span *ngFor="let parametre of parametres;index as i">
+        <a [routerLink]="['/',parametre.path]" *ngIf="i==0;else elseBlock">{{parametre.path}}</a>
+        <ng-template #elseBlock>
+            {{parametre.path|chemin:theme.theme}}
+        </ng-template>
+    </span>
+    <br>
+    <button (click)="retour()" class="btn-retour">retour</button>
+</div>
+<div class="container" *ngIf="theme$|async as theme">
+    <div class="sub-container container-img">
+        <div class="card">
+            <img src="../../../../../assets/images/croix.jpg" alt="croix" class="avatar">
+            <h3>{{theme.theme}}</h3>
+        </div>
+        <p>
+            {{theme.description}}
+        </p>
+    </div>
+    <div class="sub-container container-config">
+        <div class="tab">
+            <button [ngClass]="tablinksClasses.generale" (click)="activerOnglet('generale')">
+                Générale
+            </button>
+            <button [ngClass]="tablinksClasses.passage" (click)="activerOnglet('passage')">
+                Passage bibliques
+            </button>
+        </div>
+        <div [ngClass]="classes.generale">
+            <!--Formulaire de modification -->
+            <app-ajout-modif-theme 
+            [typeAction]="'update'" 
+            [theme]="theme"
+            (updateEvent)="themeUpdated($event)"
+            >
+            </app-ajout-modif-theme>
+        </div>
+        <div [ngClass]="classes.passage">
+            <!--Ajouter un passage biblique-->
+            <app-ajout-modif-theme-livre
+            *ngIf="'store' == actionFormThemeLivre"
+            [typeAction]="'store'"
+            [theme_id]="theme.id"
+            (storeEvent)="storePassageBiblique($event)"
+            >
+            </app-ajout-modif-theme-livre>
+            <!--Modifier un passage biblique-->
+            <app-ajout-modif-theme-livre
+            *ngIf="'update' == actionFormThemeLivre"
+            [typeAction]="'update'"
+            [theme_id]="theme.id"
+            [themeLivre]="passageToUpdate"
+            (updateEvent)="updatePassageBiblique($event)"
+            >
+            </app-ajout-modif-theme-livre>
+            <button 
+            *ngIf="'update'==actionFormThemeLivre" 
+            (click)="actionFormThemeLivre = 'store'"
+            class="btnAjouter">
+                Ajouter un role
+            </button>
+            <!-- Tableau de toutes les passages bibliques du thème -->
+            <app-tab-theme-livre
+            [passages]="theme.passages"
+            (updateEvent)="modifierPassage($event)"
+            [newPassage]="newPassage"
+            [updatePassage]="updatePassage"
+            >
+            </app-tab-theme-livre>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,10 @@
+<div class="container">
+    <h1>Thematique</h1>
+    <div class="thematique" *ngFor="let thematique of thematiques$|async">
+        <div class="theme" *ngFor="let theme of thematique.themes">
+            <a [routerLink]="['/themes',theme.id]"></a>
+            <img [src]="image(theme.image)" alt="image">
+            <h4 title="theme">{{theme.theme}}</h4>
+        </div>
+    </div>
+</div>

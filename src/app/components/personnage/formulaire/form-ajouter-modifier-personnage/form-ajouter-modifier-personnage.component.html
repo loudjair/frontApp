@@ -1,0 +1,58 @@
+<h1 *ngIf="typeAction=='store'">Ajouter un personnage</h1>
+<h1 *ngIf="typeAction=='update'">Modifier {{updatePersonnage.nom}}</h1>
+<form [formGroup]="personnageForm" (ngSubmit)="action()">
+  <label for="categorie">Testament</label>
+  <select formControlName="testament" id="testament">
+      <option value="ancien">ancien</option>
+      <option value="nouveau">nouveau</option>
+      <option value="deux">deux</option>
+  </select>
+  <label for="">Nom</label>
+  <input type="text" formControlName="nom" id="nom" placeholder="nom">
+  <label for="sexe">Sexe:</label>
+  <select formControlName="sexe" id="sexe">
+      <option value="F">Femme</option>
+      <option value="M">Homme</option>
+  </select>
+  <div formGroupName="naissance">
+    <label for="date">Naissance :</label>
+    <input type="date" formControlName="date" placeholder="date">
+    <div formGroupName="localite">
+      <label><u>Localité de la naissance</u>:</label>
+      <div>
+        <label for="">Lieu:</label>
+        <input type="text" formControlName="lieu" id="lieu" placeholder="lieu">
+        <label for="">Ville:</label>
+        <input type="text" formControlName="ville" id="ville" placeholder="ville">
+      </div>
+      <div>
+        <label for="">Région:</label>
+        <input type="text" formControlName="region" id="region" placeholder="region">
+        <label for="">Pays:</label>
+        <input type="text" formControlName="pays" id="pays" placeholder="pays">
+      </div>
+    </div>
+  </div>
+  <div formGroupName="deces">
+    <label for="date">Décès:</label>
+    <input type="date" formControlName="date" id="date" placeholder="date">
+    <div formGroupName="localite">
+      <label> <u>Localité du décès</u> :</label>
+      <div>
+        <label for="">Lieu:</label>
+        <input type="text" formControlName="lieu" id="lieu" placeholder="lieu">
+        <label for="">Ville:</label>
+        <input type="text" formControlName="ville" id="ville" placeholder="ville">
+      </div>
+      <div>
+        <label for="">Région:</label>
+        <input type="text" formControlName="region" id="region" placeholder="region">
+        <label for="">Pays:</label>
+        <input type="text" formControlName="pays" id="pays" placeholder="pays">
+      </div>
+    </div>
+  </div>
+  <label>Description:</label>
+  <textarea formControlName="description" id="description"></textarea>
+  <button>{{typeAction == 'store' ? 'Ajouter':'Modifier'}}</button>
+</form>

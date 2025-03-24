@@ -1,0 +1,39 @@
+<div class="container-table">
+    <table>
+        <thead>
+            <th>Id</th>
+            <th>Titre</th>
+            <th>Testament</th>
+            <th>Apocryphe</th>
+            <th>Chapitre total</th>
+            <th>Verset total</th>
+            <th>Description</th>
+            <th>created at</th>
+            <th>updated at</th>
+            <th>Action</th>
+        </thead>
+        <tbody>
+            <tr *ngFor="let livre of livres$ | async">
+                <td>{{livre.id}}</td>
+                <td>{{livre.titre}}</td>
+                <td>{{livre.testament}}</td>
+                <td>{{livre.apocryphe}}</td>
+                <td>{{livre.chapitre_total}}</td>
+                <td>{{livre.verset_total}}</td>
+                <td>
+                    <details *ngIf="livre.description != null">
+                        <summary>Détails</summary>
+                        {{livre.description}}
+                    </details>
+                    <span *ngIf="livre.description == null">?</span>
+                </td>
+                <td>{{livre.created_at | date}}</td>
+                <td>{{livre.updated_at | date}}</td>
+                <td>
+                    <a [routerLink]="[livre.id]" style="color:blue">Modifier</a>
+                    <button (click)="destroy(livre.id)">Delete</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

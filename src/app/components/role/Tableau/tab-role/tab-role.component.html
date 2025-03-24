@@ -1,0 +1,24 @@
+<!--Destiné pour l'opération de suppression -->
+<div class="container-table">
+    <table>
+        <thead>
+            <th>role</th>
+            <th>Description</th>
+            <th>created at</th>
+            <th>update at</th>
+            <th>action</th>
+        </thead>
+        <tbody>
+            <tr *ngFor="let role of roles$ | async">
+                <td>{{role.role}}</td>
+                <td><p>{{role.description}}</p></td>
+                <td>{{role.created_at | date}}</td>
+                <td>{{role.updated_at | date}}</td>
+                <td>
+                    <a [routerLink]="[role.id]" style="color:blue">Modifier</a>
+                    <button (click)="destroy(role.id)">Supprimer</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

@@ -1,0 +1,146 @@
+.chemin{
+    margin:1em;
+}
+
+.chemin span::after{
+    content: "/";
+    margin:0 0.5em;   
+}
+
+.chemin span a{
+    color:black;
+    text-decoration: none;
+}
+
+.chemin span a:hover{
+    text-decoration: underline;
+}
+.btn-retour{
+    margin:1em 0;
+}
+.container{
+    height: 50vh;
+    width: 95%;
+    display:flex;
+    margin:1em auto;
+}
+.sub-container{
+    width: 70%;
+    border: 1px solid gainsboro;
+    display: flex;
+    flex-direction: column;
+}
+
+.container-img{
+    display: flex;
+    width:30%;
+    position:relative;
+    justify-content: center;
+}
+.header-testament{
+    position:absolute;
+    text-align: center;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.571);
+    align-self: center;
+    padding: 0.5em;
+}
+.slide-img{
+    object-fit: cover;
+}
+.img-theme{
+    width:30%;
+}
+
+.img-testament{
+    width: 100%;
+}
+
+.theme{
+    align-content: center;
+}
+h1,h2,h3{
+    text-decoration: underline;
+}
+
+.container-theme{
+    margin: 0 auto;
+    width: 80%;
+
+}
+
+.container-passages{
+    width:70%;
+}
+
+.passage{
+    margin: 0 auto;
+    width: 90%;
+    
+}
+
+.passage h2{
+    text-decoration: underline;
+}
+
+.tab {
+    overflow: hidden;
+    border: 1px solid #ccc;
+    background-color: #f1f1f1;
+  }
+  
+  /* Style the buttons inside the tab */
+  .tab button {
+    background-color: inherit;
+    float: left;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 14px 16px;
+    transition: 0.3s;
+    font-size: 17px;
+  }
+  
+  /* Change background color of buttons on hover */
+  .tab button:hover {
+    background-color: #ddd;
+  }
+  
+  /* Create an active/current tablink class */
+  .tab button.active {
+    background-color: #ccc;
+  }
+  
+  /* Style the tab content */
+  .tabcontent{
+    flex-direction:column;
+    border-top: none;
+    overflow-y: auto;
+  }
+  .displayNone{
+    display:none;
+  }
+
+  .displayFlex{
+    display:flex;
+  }
+  .msg-ajout-passage{
+    display: block;
+    margin:auto 0;
+    text-align: center;
+  }
+  .msg-ajout-passage a{
+    display: block;
+    margin: 0.5em auto;
+    width: fit-content;
+    color:black;
+    border:1px solid black;
+    border-radius: 0.2em;
+    padding: 0.5em;
+    text-decoration: none;
+    background-color: rgb(249, 232, 232);
+  }
+
+  .msg-ajout-passage a:hover{
+    text-decoration: underline;
+  }

@@ -1,0 +1,51 @@
+<h1 *ngIf="typeAction == 'update'">Modifier une relation</h1>
+<h1 *ngIf="typeAction == 'store'">Ajouter une relation</h1>
+
+<form [formGroup]="relationForm" (ngSubmit)="action()">
+    <label for="personnage">Personnage:</label>
+    <select formControlName="personnage_id" id="personnage_id">
+        <option [value]="personnage.id" *ngFor="let personnage of personnages$ | async">
+            {{personnage.nom}}
+        </option>
+    </select>
+
+    <label for="livre_id">Livre:</label>
+    <select formControlName="livre_id" id="livre_id">
+        <option [value]="livre.id" *ngFor="let livre of livres$ | async">{{livre.titre}}</option>
+    </select>
+    <label for="chapitre">Chapitre:</label>
+    <input type="number" formControlName="chapitre" id="chapitre">
+    <div formGroupName="versets" class="versets">
+        <label for="debut">Verset début</label>
+        <input type="number" formControlName="debut" id="debut">
+        <label for="fin">Verset fin</label>
+        <input type="number" formControlName="fin" id="fin">
+    </div>
+
+    <label for="type_relation">Type de relation:</label>
+    <select formControlName="type" id="type">
+        <option value="famille">famille</option>
+        <option value="amitié">amitié</option>
+        <option value="travail">travail</option>
+        <option value="autre">autre</option>
+    </select>
+    <label for="relation">Relation:</label>
+    <select formControlName="relation" id="relation">
+        <optgroup label="famille">
+            <option [value]="relation" *ngFor="let relation of relations">{{relation}}</option>
+        </optgroup>
+        <optgroup label="amitié">
+            <option value=""></option>
+        </optgroup>
+        <optgroup label="travail">
+            <option value=""></option>
+        </optgroup>
+        <optgroup label="autre">
+            <option value=""></option>
+        </optgroup>
+    </select>
+    <label>Description</label>
+    <textarea formControlName="description" id="description">
+    </textarea>
+    <button>{{typeAction}}</button>
+</form>
