@@ -1,0 +1,175 @@
+{
+  "configVersion": 1,
+  "timestamp": 1742834228342,
+  "index": "/frontApp/index.html",
+  "assetGroups": [
+    {
+      "name": "app",
+      "installMode": "prefetch",
+      "updateMode": "prefetch",
+      "cacheQueryOptions": {
+        "ignoreVary": true
+      },
+      "urls": [
+        "/frontApp/favicon.ico",
+        "/frontApp/index.html",
+        "/frontApp/main.d393daacb10ed4ae.js",
+        "/frontApp/manifest.webmanifest",
+        "/frontApp/polyfills.07d0025bd64d0659.js",
+        "/frontApp/runtime.293962181daeb1b6.js",
+        "/frontApp/styles.da156bfdbc3f1a18.css"
+      ],
+      "patterns": []
+    },
+    {
+      "name": "assets",
+      "installMode": "lazy",
+      "updateMode": "prefetch",
+      "cacheQueryOptions": {
+        "ignoreVary": true
+      },
+      "urls": [
+        "/frontApp/assets/api.ts",
+        "/frontApp/assets/icons/book.png",
+        "/frontApp/assets/icons/icon-128x128.png",
+        "/frontApp/assets/icons/icon-144x144.png",
+        "/frontApp/assets/icons/icon-152x152.png",
+        "/frontApp/assets/icons/icon-192x192.png",
+        "/frontApp/assets/icons/icon-384x384.png",
+        "/frontApp/assets/icons/icon-512x512.png",
+        "/frontApp/assets/icons/icon-72x72.png",
+        "/frontApp/assets/icons/icon-96x96.png",
+        "/frontApp/assets/images/Isaiah.jpg",
+        "/frontApp/assets/images/adoration_louange.jpg",
+        "/frontApp/assets/images/amour.jpg",
+        "/frontApp/assets/images/arche_de_noe.jpg",
+        "/frontApp/assets/images/argent.jpg",
+        "/frontApp/assets/images/baby_jesus.jpg",
+        "/frontApp/assets/images/bible.jpg",
+        "/frontApp/assets/images/compte.jpg",
+        "/frontApp/assets/images/connexion_inscription.jpg",
+        "/frontApp/assets/images/croix.jpg",
+        "/frontApp/assets/images/daniel.jpg",
+        "/frontApp/assets/images/david.jpg",
+        "/frontApp/assets/images/etude.jpg",
+        "/frontApp/assets/images/famille.jpg",
+        "/frontApp/assets/images/icons/book.png",
+        "/frontApp/assets/images/icons/crown.png",
+        "/frontApp/assets/images/icons/database.png",
+        "/frontApp/assets/images/icons/farmer.png",
+        "/frontApp/assets/images/icons/priest.png",
+        "/frontApp/assets/images/icons/profile.png",
+        "/frontApp/assets/images/icons/requete.png",
+        "/frontApp/assets/images/icons/right-arrow.png",
+        "/frontApp/assets/images/icons/search.png",
+        "/frontApp/assets/images/icons/shepherd.png",
+        "/frontApp/assets/images/icons/sword.png",
+        "/frontApp/assets/images/icons/topic.png",
+        "/frontApp/assets/images/icons/user.png",
+        "/frontApp/assets/images/icons/woman.png",
+        "/frontApp/assets/images/jardin d'eden.jpg",
+        "/frontApp/assets/images/jean_le_baptiste.jpg",
+        "/frontApp/assets/images/jesus.jpg",
+        "/frontApp/assets/images/le retour.jpg",
+        "/frontApp/assets/images/man.jpg",
+        "/frontApp/assets/images/moise.jpg",
+        "/frontApp/assets/images/priere.jpg",
+        "/frontApp/assets/images/rois mages.jpg",
+        "/frontApp/assets/images/sainte_cene.jpg",
+        "/frontApp/assets/images/woman.jpg"
+      ],
+      "patterns": []
+    }
+  ],
+  "dataGroups": [
+    {
+      "name": "api",
+      "patterns": [
+        "http:\\/\\/127\\.0\\.0\\.1:8000\\/api\\/[^/]*"
+      ],
+      "strategy": "freshness",
+      "maxSize": 50,
+      "maxAge": 86400000,
+      "cacheQueryOptions": {
+        "ignoreVary": true
+      },
+      "version": 1
+    }
+  ],
+  "hashTable": {
+    "/frontApp/assets/api.ts": "0c9d346238071346c3fa371739ab939114630f6a",
+    "/frontApp/assets/icons/book.png": "7e6d502b2baf611b276e3d3450836d61a7ffebf9",
+    "/frontApp/assets/icons/icon-128x128.png": "b1f06c7d714abb4a0cc4d1f7c954feb26826e4c4",
+    "/frontApp/assets/icons/icon-144x144.png": "96a0d629765c1bc85d9263c6bc83094ca776d267",
+    "/frontApp/assets/icons/icon-152x152.png": "b1fbbee3902eb96a7658e3bb006f31f78ca5a44c",
+    "/frontApp/assets/icons/icon-192x192.png": "e4211163bf0911688fbfb80278d8ff4d2f77691d",
+    "/frontApp/assets/icons/icon-384x384.png": "329749cd6393768d3131ed6304c136b1ca05f2fd",
+    "/frontApp/assets/icons/icon-512x512.png": "559d9c4318b45a1f2b10596bbb4c960fe521dbcc",
+    "/frontApp/assets/icons/icon-72x72.png": "279825a1ac4377032ae996a1832c641e33ccf1b6",
+    "/frontApp/assets/icons/icon-96x96.png": "592885efcbfee27e5e20be4fa3043589390d2740",
+    "/frontApp/assets/images/Isaiah.jpg": "047ee3d8d4b84ba5f7601991b6429518d739a3bb",
+    "/frontApp/assets/images/adoration_louange.jpg": "f6541a136e006f97aea765e7c9eb0cb03c6c8730",
+    "/frontApp/assets/images/amour.jpg": "de6f9e3eb02c1ee84babc1c26be8433d868b329c",
+    "/frontApp/assets/images/arche_de_noe.jpg": "0c0222afa447d3492c29027f1bae6e7dca64ea56",
+    "/frontApp/assets/images/argent.jpg": "59ec476e7293d779f88d88df4c611fbf92534225",
+    "/frontApp/assets/images/baby_jesus.jpg": "35a3eb798420fbd2747f232220fee696fb614b72",
+    "/frontApp/assets/images/bible.jpg": "dc202e1eb5e70b6489a28fa3c2f00bffc1d12ae9",
+    "/frontApp/assets/images/compte.jpg": "c0cd48c8fbd3b7976359b7b803e427aad135f732",
+    "/frontApp/assets/images/connexion_inscription.jpg": "f31423b6e87c59cdf659af505a1364d1171275cb",
+    "/frontApp/assets/images/croix.jpg": "dc43eeadbb270ea14e83516cb6a64a401d65e063",
+    "/frontApp/assets/images/daniel.jpg": "f21334a9c096d812c897ae900f733e22f24efaa0",
+    "/frontApp/assets/images/david.jpg": "5ba3668ccdb530effbf569f00f5cf4b032fee834",
+    "/frontApp/assets/images/etude.jpg": "b3ac73656af87553a752b22d58eaa944188603f8",
+    "/frontApp/assets/images/famille.jpg": "c17def326be7adb7d7f20202c0da9ef3d4a76983",
+    "/frontApp/assets/images/icons/book.png": "841844b6e8d856a5ca5099c51c075d109de292f2",
+    "/frontApp/assets/images/icons/crown.png": "355f8acc92fdbfbd6f1397efbb95a4618a4542be",
+    "/frontApp/assets/images/icons/database.png": "d94412a0eed6f6cd771da07630c18bb06bbadd5b",
+    "/frontApp/assets/images/icons/farmer.png": "d9dc30c83ed9735dd1e0b37227ffabebb939f4e6",
+    "/frontApp/assets/images/icons/priest.png": "a32ff3a8103d0ce0c4aa0f4c8272e8ea350a7eb1",
+    "/frontApp/assets/images/icons/profile.png": "3e9e72dfdd810c05520cdebe2370032ca917ccf9",
+    "/frontApp/assets/images/icons/requete.png": "d4511d9a053e52b258006ac31972342e605a0b6e",
+    "/frontApp/assets/images/icons/right-arrow.png": "4e37c812a75f0873ab4096af18a048b560845614",
+    "/frontApp/assets/images/icons/search.png": "0ad81544c03d415bad336b865a6dfeeba9cb31af",
+    "/frontApp/assets/images/icons/shepherd.png": "7594ed32424b25adfe408ecc86d5fd8ae0141a2c",
+    "/frontApp/assets/images/icons/sword.png": "3aa18629f57f2d9a53832fa984ee1059022d9674",
+    "/frontApp/assets/images/icons/topic.png": "f34bc52978c4d9a33ebb0528b91a88e6ea01f566",
+    "/frontApp/assets/images/icons/user.png": "f7cd564ef4e3d4fb56bff307da230963497fb494",
+    "/frontApp/assets/images/icons/woman.png": "7ef0c6120b42968d069fefdc16bbd2b9433d2eec",
+    "/frontApp/assets/images/jardin d'eden.jpg": "bdf11ab377af9affb8a646280e6a9787f43ce739",
+    "/frontApp/assets/images/jean_le_baptiste.jpg": "52592d0b309cd136439eb15f39a429d6cabcae6f",
+    "/frontApp/assets/images/jesus.jpg": "68335077955225877c76552e1b4d9c6e269656e0",
+    "/frontApp/assets/images/le retour.jpg": "754d8191f5f008f140fe1b3d639225bbeb6f45a8",
+    "/frontApp/assets/images/man.jpg": "43601fe129bdfcc0aff3658235d40337764e6202",
+    "/frontApp/assets/images/moise.jpg": "bec6db7f102bcdab3060c9389649180fbd83f536",
+    "/frontApp/assets/images/priere.jpg": "812e39999c4910b6c54ae44257653ef1862f542d",
+    "/frontApp/assets/images/rois mages.jpg": "2b5f2f9df3d70e09132994bd4e57e7d58792b01b",
+    "/frontApp/assets/images/sainte_cene.jpg": "0154e4705c06ef8fb689ca7af0d1d168d5cc8f3b",
+    "/frontApp/assets/images/woman.jpg": "6a0770b78ad626b01f46233a2917b818bea49aa9",
+    "/frontApp/favicon.ico": "22f6a4a3bcaafafb0254e0f2fa4ceb89e505e8b2",
+    "/frontApp/index.html": "093640c8e8048af516428711eff5e2426fc07e75",
+    "/frontApp/main.d393daacb10ed4ae.js": "48eae8a95804200d71c57e281d50b065709d6c5c",
+    "/frontApp/manifest.webmanifest": "16c721e9769cb323ba65a7d2c4475b98b8e2d709",
+    "/frontApp/polyfills.07d0025bd64d0659.js": "994ee89f71977f90a69a92489aa46079ddc523d7",
+    "/frontApp/runtime.293962181daeb1b6.js": "1c364b206f6e650938ba041dc693bbdf0f39dd08",
+    "/frontApp/styles.da156bfdbc3f1a18.css": "b6717faff0811ce7b8b3ccf25e67bab2894e0cc6"
+  },
+  "navigationUrls": [
+    {
+      "positive": true,
+      "regex": "^\\/.*$"
+    },
+    {
+      "positive": false,
+      "regex": "^\\/(?:.+\\/)?[^/]*\\.[^/]*$"
+    },
+    {
+      "positive": false,
+      "regex": "^\\/(?:.+\\/)?[^/]*__[^/]*$"
+    },
+    {
+      "positive": false,
+      "regex": "^\\/(?:.+\\/)?[^/]*__[^/]*\\/.*$"
+    }
+  ],
+  "navigationRequestStrategy": "performance"
+}
