@@ -1,6 +1,6 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { concat, Observable, of } from 'rxjs';
+import { Observable } from 'rxjs';
 import { Token } from 'src/app/models/Token/token';
 import { User } from 'src/app/models/User/user';
 import { URL } from 'src/assets/api';
