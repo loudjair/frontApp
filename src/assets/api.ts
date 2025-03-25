@@ -1,5 +1,5 @@
 export const URL = {
-    urlApi:"https://api.apprb.ovh:8000"
+    urlApi:"https://api.apprb.ovh"
 };
 export const TRADUCTIONS = ['Sarment'];
 
