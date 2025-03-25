@@ -1,5 +1,5 @@
 export const URL = {
-    urlApi:"https://51.75.200.208:8000/api"
+    urlApi:""
 };
 export const TRADUCTIONS = ['Sarment'];
 
