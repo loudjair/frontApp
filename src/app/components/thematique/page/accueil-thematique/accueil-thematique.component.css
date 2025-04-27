@@ -11,10 +11,9 @@
     overflow-y: auto;
     padding-left: 1em;
     height: 90vh;
+    width: 100%;
 }
-.container-thematique h1{
-    text-align: center;
-}
+
 .theme{
     display: inline-block;
     width: 10em;
