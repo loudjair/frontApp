@@ -1,6 +1,7 @@
 export const URL = {
     urlApi:"https://api.apprb.ovh/api"
 };
+
 export const TRADUCTIONS = ['Sarment'];
 
 export const EDITIONS = ['Edition du JUBILE'];  
