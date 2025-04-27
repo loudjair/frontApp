@@ -1,6 +1,6 @@
 {
   "configVersion": 1,
-  "timestamp": 1743166881988,
+  "timestamp": 1745757831799,
   "index": "/frontApp/index.html",
   "assetGroups": [
     {
@@ -13,7 +13,7 @@
       "urls": [
         "/frontApp/favicon.ico",
         "/frontApp/index.html",
-        "/frontApp/main.76269eb66934c154.js",
+        "/frontApp/main.6bf0cb202e8b2d5e.js",
         "/frontApp/manifest.webmanifest",
         "/frontApp/polyfills.07d0025bd64d0659.js",
         "/frontApp/runtime.293962181daeb1b6.js",
@@ -97,7 +97,7 @@
     }
   ],
   "hashTable": {
-    "/frontApp/assets/api.ts": "770eb73e40be9bf7d1773f803027d9a6a42d662a",
+    "/frontApp/assets/api.ts": "8e5e6fd4ccd507248341af0d4496e4c32335bcef",
     "/frontApp/assets/icons/book.png": "7e6d502b2baf611b276e3d3450836d61a7ffebf9",
     "/frontApp/assets/icons/icon-128x128.png": "b1f06c7d714abb4a0cc4d1f7c954feb26826e4c4",
     "/frontApp/assets/icons/icon-144x144.png": "96a0d629765c1bc85d9263c6bc83094ca776d267",
@@ -146,8 +146,8 @@
     "/frontApp/assets/images/sainte_cene.jpg": "0154e4705c06ef8fb689ca7af0d1d168d5cc8f3b",
     "/frontApp/assets/images/woman.jpg": "6a0770b78ad626b01f46233a2917b818bea49aa9",
     "/frontApp/favicon.ico": "22f6a4a3bcaafafb0254e0f2fa4ceb89e505e8b2",
-    "/frontApp/index.html": "30bdbdc31b908971abac5607bb9500bc1382b954",
-    "/frontApp/main.76269eb66934c154.js": "014ee4dd74e1f674ec3ad26ac8e964572815bf0d",
+    "/frontApp/index.html": "27c767adc7229068f1644d519619d780ee1b0911",
+    "/frontApp/main.6bf0cb202e8b2d5e.js": "740b3e708afa51f5cb1c34b3747293cff5de7392",
     "/frontApp/manifest.webmanifest": "16c721e9769cb323ba65a7d2c4475b98b8e2d709",
     "/frontApp/polyfills.07d0025bd64d0659.js": "994ee89f71977f90a69a92489aa46079ddc523d7",
     "/frontApp/runtime.293962181daeb1b6.js": "1c364b206f6e650938ba041dc693bbdf0f39dd08",
