@@ -1,6 +1,7 @@
 .container{
     display: flex;
     height: 90vh;
+    flex-wrap: wrap;
 }
 .sub-container{
     width: 50%;
