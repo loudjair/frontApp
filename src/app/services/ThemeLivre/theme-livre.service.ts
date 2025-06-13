@@ -23,6 +23,7 @@ export class ThemeLivreService {
    */
   public store(valeur:any):Observable<ThemeLivre>{
     const headers = this.authService.initHeaderAuthorization();
+    valeur.user_id = this.authService.getUser2().id;
     return this.http.post<ThemeLivre>(this.url,{new:valeur},{withCredentials:true,headers:headers});
   }
 
@@ -36,6 +37,7 @@ export class ThemeLivreService {
    */
   public update(valeur:any):Observable<ThemeLivre> {
     const headers = this.authService.initHeaderAuthorization();
+    valeur.user_id = this.authService.getUser2().id;
     return this.http.put<ThemeLivre>(this.url+`/${valeur?.id}`,{new:valeur},{params:{themes_livre:valeur?.id},withCredentials:true,headers:headers});
   }
   /**

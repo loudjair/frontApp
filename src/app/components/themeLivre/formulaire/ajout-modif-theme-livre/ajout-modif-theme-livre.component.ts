@@ -31,7 +31,8 @@ export class AjoutModifThemeLivreComponent implements OnInit,OnChanges{
     }),
     explications:[""],
     traduction:"",
-    edition:""
+    edition:"",
+    user_id:0
   });
   constructor(private formBuilder:FormBuilder,private themeLivreService:ThemeLivreService,private livreService:LivreService){
   }
@@ -48,7 +49,8 @@ export class AjoutModifThemeLivreComponent implements OnInit,OnChanges{
         versets:this.themeLivre.versets,
         explications:this.themeLivre.explications,
         traduction:this.themeLivre.traduction,
-        edition:this.themeLivre.edition
+        edition:this.themeLivre.edition,
+        user_id:this.themeLivre.user_id
       });
     }
     if("store" == this.typeAction && changes["theme_id"].currentValue != changes["theme_id"].previousValue){
