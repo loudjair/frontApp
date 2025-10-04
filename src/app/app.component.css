@@ -1,11 +1,12 @@
 nav{
     display: flex;
     justify-content: space-around;
-    position: sticky;
+    position: fixed;
     background-color: white;
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
-    top:0;
+    bottom:0;
     z-index: 3;
+    width: 100%;
 }
 
 nav a {

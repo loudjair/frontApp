@@ -1,29 +1,46 @@
 header *{
     text-align: center;
 }
+/*** Les en-têtes ***/
+h1{
+    font-size: clamp(1.5rem, 2.5vw + 1rem, 3rem);
+}
 
+h2{
+    font-size: clamp(1.375rem, 2vw + 0.8rem, 2.25rem);
+}
+@media screen and (max-width: 575px) {
+    h1,h2{
+       margin:0.25rem 0;
+    }
+    h2{
+        color:white;
+        position: absolute;
+        bottom:10px;
+        left:50%;
+        transform: translateX(-50%);
+        z-index:2;
+        text-shadow: 1px 1px 2px black;
+    }
+}
+/*** Fin en-tête ***/
+
+/* Image + liens directs sur les pages */
 .index-container{
     display: flex;
     flex-direction: column;
 }
-
+/* Bannière d'image */
 .container-img{
     display: flex;
 }
 
-.container-link{
-    text-align: center;
-}
-
 .sub-container-img{
-    width: 33%;
-    flex-grow: 1;
-    height: 20em;
     opacity: 0;
     animation-duration:1s;
     animation-fill-mode: forwards;
-    width: fit-content;
     border:1px solid black;
+    position: relative;
 }
 
 .sub-container-img h2{
@@ -32,7 +49,6 @@ header *{
 
 .img-index{
     width: 100%;
-    height:80%;
     object-fit: cover;
 }
 
@@ -67,8 +83,7 @@ header *{
     to {
         opacity: 1;
     }
-}
-            
+}          
 @keyframes anim-img3{
     from {
         opacity: 0;
@@ -77,6 +92,46 @@ header *{
         opacity: 1;
     }
 }
+@media screen and (max-width: 575px) {
+    .container-img{
+        flex-direction: column;
+    }
+    .sub-container-img{
+        width: 100%;
+        height: auto;
+        border-bottom:2px solid white;
+    }
+    .img-index{
+        height: 30vh;
+    }
+    .filtre{
+        position: absolute;
+        top:0;
+        left:0;
+        width:100%;
+        height:100%;
+        background-image: linear-gradient(to bottom, rgba(0,0,0,0) 60%, rgba(0,0,0,0.9) 100%);
+        z-index:1;
+    }
+}
+
+@media screen and (min-width: 576px){
+    .sub-container-img{
+        width: 33%;
+        height: 20em;
+        flex-grow: 1;
+        width: fit-content;
+    }
+    .img-index{
+        height: 80%;
+    }
+}
+
+/* Les liens directs sur les pages */
+.container-link{
+    text-align: center;
+}
+
 .link{
     display: inline-block;
     margin:0.5em;
