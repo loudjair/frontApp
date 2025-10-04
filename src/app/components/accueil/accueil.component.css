@@ -92,7 +92,7 @@ h2{
         opacity: 1;
     }
 }
-@media screen and (max-width: 575px) {
+@media screen and (min-width: 200px) and (max-width: 575px) {
     .container-img{
         flex-direction: column;
     }
@@ -120,7 +120,6 @@ h2{
         width: 33%;
         height: 20em;
         flex-grow: 1;
-        width: fit-content;
     }
     .img-index{
         height: 80%;
