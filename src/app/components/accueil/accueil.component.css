@@ -92,7 +92,7 @@ h2{
         opacity: 1;
     }
 }
-@media screen and (min-width: 200px) and (max-width: 575px) {
+@media screen and (max-width: 575px) {
     .container-img{
         flex-direction: column;
     }
