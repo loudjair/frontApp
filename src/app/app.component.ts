@@ -1,5 +1,5 @@
-import { Component} from '@angular/core';
-import { NavigationEnd, Router} from '@angular/router';
+import { Component, OnInit} from '@angular/core';
+import { ActivatedRoute, NavigationEnd, Router} from '@angular/router';
 import { filter, Observable, of } from 'rxjs';
 import { User } from './models/User/user';
 import { AuthService } from './services/auth/auth.service';
@@ -9,10 +9,10 @@ import { AuthService } from './services/auth/auth.service';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent{
+export class AppComponent implements OnInit{
   public classes:Record<string,boolean> = {'display-none' : true,'box-link':true};
   public user$!:Observable<User>;
-  constructor(public router:Router,private authService:AuthService){
+  constructor(public router:Router,private authService:AuthService,private route:ActivatedRoute){
     router.events.pipe(
       filter((event)=> event instanceof NavigationEnd)
     )
@@ -36,6 +36,16 @@ export class AppComponent{
     });
   }
 
+  ngOnInit(): void {
+    this.route.fragment.subscribe({
+      next:(fragment)=>{
+        if(fragment){
+          this.navigateToFragment(fragment);
+        }
+      }
+    });
+  }
+
   deconnexion():void{
     this.authService.deconnexion().subscribe({
       next:()=>{
@@ -44,5 +54,11 @@ export class AppComponent{
         this.router.navigate(['/compte/login']);
       }
     });
+  }
+  /* 
+    Accès directe à un élément de la page, élément referencé avec l'attribut id
+  */
+  navigateToFragment(fragment: string): void {
+    document.getElementById(fragment)?.scrollIntoView({behavior:"smooth",block:"start"});
   }
 }

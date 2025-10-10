@@ -18,4 +18,12 @@ export class AccueilThematiqueComponent implements OnInit{
   image(url:string):string{
     return "assets/images/croix.jpg";
   }
+  afficherSommaire():void{
+    const bouton = document.getElementById("btn-sommaire");
+    const sommaire = document.getElementById("sommaire");
+    bouton?.classList.toggle("change");
+    sommaire?.classList.toggle("sommaire_cache");
+    sommaire?.classList.toggle("sommaire_visible");
+  }
+
 }

@@ -1,11 +1,75 @@
+/****  Bouton Sommaire ****/
+#btn-sommaire{
+    position: fixed;
+    top: 0.5em;
+    left: 0.5em;
+    z-index: 3;
+    border-radius: 50%;
+    width: 3em;
+    height: 3em;
+    background-color: white;
+    border: 1px solid black;
+    box-shadow: 0 0 5px rgba(0,0,0,0.3);
+    cursor: pointer;
+}
+
+.bar{
+    width: 2em;
+    height: 0.25em;
+    background-color: #333;
+    margin: 0.25em 0;
+    transition: 0.4s;
+}
+
+.change #bar1 {
+  transform: translate(0, 0.50em) rotate(-45deg);
+}
+
+.change #bar2 {opacity: 0;}
+
+.change #bar3 {
+  transform: translate(0, -0.50em) rotate(45deg);
+}
+/****  Fin de bouton Sommaire ****/
+/****  Sommaire ****/
+
+.sommaire_cache{
+    width:0;
+}
+.sommaire_visible{
+    width: 100%;
+}
+
+#sommaire{
+    position: absolute;
+    transition: all 0.5s ease-in-out;
+    z-index: 2;
+    background-color: rgba(255,255,255,0.6);
+    overflow-x: hidden;
+    top:0;
+    left:0;
+    height: 100vh;
+}
+
+#sommaire h1{
+    text-align: center;
+    border-bottom: 1px solid black;
+    margin:0;
+}
+#sommaire ul{
+    text-align: center;
+    list-style-type: none;
+    padding: 0;
+    overflow-y: auto;
+    height: 80vh;
+}
+
+/****  Fin de sommaire ****/
+
 .container-flex{
     display: flex;
 }
 
-.sommaire{
-    border-right: 1px solid black;
-    width: 20%;
-}
 
 .container-thematique{
     overflow-y: auto;

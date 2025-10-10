@@ -1,15 +1,19 @@
-
+<button (click)="afficherSommaire()" id="btn-sommaire">
+    <div id="bar1" class="bar"></div>
+    <div id="bar2" class="bar"></div>
+    <div id="bar3" class="bar"></div>
+</button>
+<div id="sommaire" class="sommaire_cache">
+    <h1>Thematiques</h1>
+    <ul>
+        <li *ngFor="let thematique of thematiques$|async">
+            <a [routerLink]="['/thematiques']" fragment="{{thematique.thematique}}">{{thematique.thematique}}</a>
+        </li>
+    </ul>
+</div>
 <div class="container-flex">
-    <div class="sommaire">
-        <h1>Thematiques:</h1>
-        <ul>
-            <li *ngFor="let thematique of thematiques$|async">
-                {{thematique.thematique}}
-            </li>
-        </ul>
-    </div>
     <div class="container-thematique">
-        <div *ngFor="let thematique of thematiques$|async">
+        <div *ngFor="let thematique of thematiques$|async" id="{{thematique.thematique}}">
             <h1><u>{{thematique.thematique}}</u>:</h1>
             <div>
                 <div class="theme" *ngFor="let theme of thematique.themes">
