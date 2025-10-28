@@ -9,7 +9,7 @@
         <a routerLink="/thematiques">Thématiques</a>
     </div>
     <div class="dropdown">
-        <a routerLink="/compte" id="compte">Compte</a>
+        <a routerLink="/compte" id="compte" >Compte</a>
         <div class="dropdown-content" *ngIf="user$ |async as user">
             <span>{{user.nom}}</span>
             <span>

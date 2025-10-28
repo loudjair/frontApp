@@ -43,7 +43,7 @@ nav a:hover{
     display: none;
     position: absolute;
     bottom:0;
-    transform: translateY(100%);
+    transform: translateY(-100%);
     width: max-content;
     border:1px solid black;
     background-color: white;

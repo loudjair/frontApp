@@ -52,6 +52,7 @@ import { GestionUtilisateurComponent } from './components/utilisateur/page/gesti
 import { LivrePipe } from './pipes/Livre/livre.pipe';
 import { CheminPipe } from './pipes/URL/chemin.pipe';
 import { SexePipe } from './pipes/Sexe/sexe.pipe';
+import { PagePrincipaleParoleComponent } from './components/parole/page/page-principale-parole/page-principale-parole.component';
 
 
 
@@ -102,7 +103,8 @@ import { SexePipe } from './pipes/Sexe/sexe.pipe';
     GestionUtilisateurComponent,
     LivrePipe,
     CheminPipe,
-    SexePipe
+    SexePipe,
+    PagePrincipaleParoleComponent
   ],
   imports: [
     BrowserModule,
@@ -125,6 +127,7 @@ import { SexePipe } from './pipes/Sexe/sexe.pipe';
       {path:'compte/gestion/themes/:theme_id',component:GestionThemeComponent,canActivate:[authentificationGuard,autorisationGuard]},
       {path:'compte/gestion/utilisateurs',component:PageAdministrationUserComponent,canActivate:[authentificationGuard,autorisationGuard]},
       {path:'compte/gestion/utilisateurs/:id',component:GestionThemeComponent,canActivate:[authentificationGuard,autorisationGuard]},
+      {path:'paroles',component:PagePrincipaleParoleComponent},
       {path:'personnages',component:PagePrincipalePersonnageComponent},
       {path:'personnages/:id',component:PageInfoPersonnageComponent},
       {path:'thematiques',component:AccueilThematiqueComponent},

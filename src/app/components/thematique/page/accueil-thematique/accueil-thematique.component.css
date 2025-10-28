@@ -41,7 +41,7 @@
 }
 
 #sommaire{
-    position: absolute;
+    position: fixed;
     transition: all 0.5s ease-in-out;
     z-index: 2;
     background-color: rgba(255,255,255,0.6);
