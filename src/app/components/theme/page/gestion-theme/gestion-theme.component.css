@@ -25,7 +25,6 @@
 }
 .container{
     display: flex;
-    justify-content: center;
 }
 .sub-container{
     margin:0 1em;
@@ -73,10 +72,10 @@
     background-color: #ccc;
 }
 .tabcontent{
-    flex-direction: column;
     border-top: none;
     overflow-y: auto;
     border:1px solid gainsboro;
+    justify-content: space-evenly;
 }
 .displayNone{
     display:none;

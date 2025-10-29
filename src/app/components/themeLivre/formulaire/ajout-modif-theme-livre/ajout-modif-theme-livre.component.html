@@ -1,5 +1,5 @@
-<h1 *ngIf="'store' == typeAction">Ajouter un passage biblique:</h1>
-<h1 *ngIf="'update' == typeAction">Modifier un passage biblique:</h1>
+<h3 *ngIf="'store' == typeAction">Ajouter un passage biblique:</h3>
+<h3 *ngIf="'update' == typeAction">Modifier un passage biblique:</h3>
 <form [formGroup]="themeLivreForm" (ngSubmit)="action()">
     <label>Livre</label>
     <select formControlName="livre_id">

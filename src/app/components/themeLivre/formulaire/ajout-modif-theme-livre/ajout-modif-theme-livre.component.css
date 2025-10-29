@@ -1,26 +1,25 @@
 form{
     border:1px solid gainsboro;
     margin: 0 auto;
-    width:60%;
     display: flex;
     flex-direction: column;
     padding: 0.5em;
 }
 form *{
-    margin:0.2em 0;
+    margin:1px 0;
 }
 form button{
     width: fit-content;
 }
 form input{
-    padding: 5px;
+    padding: 1px;
 }
-h1{
+h3{
     text-align: center;
     text-decoration: underline;
 }
 select{
-    padding: 5px;
+    padding: 1px;
 }
 .versets{
     display: flex;
