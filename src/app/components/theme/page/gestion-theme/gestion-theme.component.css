@@ -25,6 +25,7 @@
 }
 .container{
     display: flex;
+    border: 1px solid gainsboro;
 }
 .sub-container{
     margin:0 1em;
@@ -32,11 +33,9 @@
 .container-img{
     display: flex;
     flex-direction: column;
-    width: 30%;
-
 }
 .container-config{
-    width: 70%;
+    flex-grow: 1;
 }
 .avatar{
     display: block;
@@ -76,6 +75,7 @@
     overflow-y: auto;
     border:1px solid gainsboro;
     justify-content: space-evenly;
+    flex-wrap: wrap;
 }
 .displayNone{
     display:none;

@@ -9,15 +9,6 @@
     <button (click)="retour()" class="btn-retour">retour</button>
 </div>
 <div class="container" *ngIf="theme$|async as theme">
-    <div class="container-img">
-        <div class="card">
-            <img src="assets/images/croix.jpg" alt="croix" class="avatar">
-            <h3>{{theme.theme}}</h3>
-        </div>
-        <p>
-            {{theme.description}}
-        </p>
-    </div>
     <div class="container-config">
         <div class="tab">
             <button [ngClass]="tablinksClasses.generale" (click)="activerOnglet('generale')">
@@ -28,6 +19,15 @@
             </button>
         </div>
         <div [ngClass]="classes.generale">
+            <div class="container-img">
+                <div class="card">
+                    <img src="assets/images/croix.jpg" alt="croix" class="avatar">
+                    <h3>{{theme.theme}}</h3>
+                </div>
+                <p>
+                    {{theme.description}}
+                </p>
+            </div>
             <!--Formulaire de modification -->
             <app-ajout-modif-theme 
             [typeAction]="'update'" 
